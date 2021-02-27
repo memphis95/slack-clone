@@ -4,6 +4,7 @@ import {BrowserRouter as Router,
   Switch,
   Route,
 } from "react-router-dom" ;
+import Header from './app/components/Header';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <>
         <Switch>
           <Route path="/" exact>
-            <Header />
+           <Header />
           </Route>
         </Switch>
       </>
