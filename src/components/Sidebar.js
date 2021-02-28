@@ -16,15 +16,15 @@ import BookmarkBorderIcon from "@material-ui/icons/BookmarkBorder";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import AddIcon from "@material-ui/icons/Add";
 
-import { db } from "../firebase";
+import { db, auth } from "../firebase";
 import { useCollection } from "react-firebase-hooks/firestore";
-
+import { useAuthState } from "react-firebase-hooks/auth"
 
 
 export default function Sidebar() {
   const [channels, loading, error] = useCollection(db.collection('rooms'));
-  console.log("channels", channels);
-
+  // console.log("channels", channels);
+  const [user] = useAuthState(auth);
 
   return (
     <SidebarContainer>
